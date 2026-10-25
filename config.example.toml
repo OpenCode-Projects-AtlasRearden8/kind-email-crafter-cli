@@ -1,0 +1,31 @@
+# kind-email voice configuration
+#
+# Copy this file to kind-email.toml in your working folder (or pass
+# --config path/to/it). Everything optional; missing file = neutral defaults.
+# No secrets live here and none are needed: refinement uses only a base_url
+# and model name, no keys, no tokens.
+
+[voice]
+name = "Me"
+greeting = "Hi"
+signoff = "Warmly,"
+
+# Turn phrase habits off. Key = phrase to avoid, value = what to write instead.
+[voice.replacements]
+"just wanted to" = "wanted to"
+"I was wondering if" = "could you tell me if"
+"very" = ""
+"asap" = "when you have a moment"
+"per my last email" = "as shared earlier"
+
+plain_words = true
+no_exclamation_marks = false
+no_emojis = true
+
+# Optional refinement endpoint (OpenAI-compatible chat completions).
+# Default is Ollama on localhost. Change base_url and model freely;
+# there is intentionally no key setting in this tool.
+[ai]
+endpoint = "http://localhost:11434/v1"
+model = "llama3.1"
+timeout = 30.0

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kind-email-crafter"
+version = "0.1.0"
+description = "Draft kind, clear emails and letters from bullet points. Local-first, no API keys, optional OpenAI-compatible refinement (Ollama default)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["email", "writing", "cli", "assistant", "ollama", "local-llm", "tone", "drafting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Email",
+    "Topic :: Text Processing",
+]
+
+[project.scripts]
+kind-email = "kind_email.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["kind_email*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
